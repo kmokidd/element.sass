@@ -1,61 +1,59 @@
-# [HTML5 Boilerplate](http://html5boilerplate.com)
+#Element.sass
 
-HTML5 Boilerplate is a professional front-end template for building fast,
-robust, and adaptable web apps or sites.
+Based on [web-auto-build](https://npmjs.org:10020/package/web-auto-build) by [@tamamadesu](http://weibo.com/myjiejie) and [elements.less](https://github.com/dmitryf/elements/blob/master/elements.less), this is part of a back-end management system developed by [itValue](http://www.itvalue.com.cn/) team.
 
-This project is the product of many years of iterative development and combined
-community knowledge. It does not impose a specific development philosophy or
-framework, so you're free to architect your code in the way that you want.
+Element.sass focuses on the style of a website. So the core parts of this project is in `css/` and `sass/`, and they are sass/scss files and css files.
 
-* Source: [https://github.com/h5bp/html5-boilerplate](https://github.com/h5bp/html5-boilerplate)
-* Homepage: [http://html5boilerplate.com](http://html5boilerplate.com)
-* Twitter: [@h5bp](http://twitter.com/h5bp)
+##Dependencies
 
+Because this project is based on web-auto-build. So you need to have **node** environment and **npm** on you computer. You can go to [node.js](http://nodejs.org/) to get more information. The developer of web-auto-build used [Grunt](http://gruntjs.com/) to develop this tool.
 
-## Quick start
+And I used Sass/Scss to write website style. So Ruby and Sass environment is required. You can go to [Sass](http://sass-lang.com/) to find more information about configuration.
 
-Choose one of the following options:
+##File structure
+	Element.sass/
+	├── sass/
+	│   ├── img/
+	│   ├── buttons.sass
+	│   ├── comments.sass
+	│   ├── config.sass
+	│   ├── forms.sass
+	│   ├── functions.sass
+	│   ├── global.sass
+	│   ├── layout.sass
+	│   ├── list.sass
+	│   ├── normalize.scss
+	│   ├── responsive.sass
+	│   ├── sprites.sass
+	│   ├── test.sass
+	├── css/
+	│   ├── style-min.css
+	├── package.json
+	└── Gruntfile.js
 
-1. Download the latest stable release from
-   [html5boilerplate.com](http://html5boilerplate.com/) or a custom build from
-   [Initializr](http://www.initializr.com).
-2. Clone the git repo — `git clone
-   https://github.com/h5bp/html5-boilerplate.git` - and checkout the tagged
-   release you'd like to use.
+##Files content
+All the real styles are in *.sass, and except config.sass, test.sass and functions.sass as well as global.sass. If you want to modify something, you need to change the dest files directly. For instance, if you want to change style of buttons, you need to modify the content in buttons.sass. Then run Gruntfile.js to pack up a new css file with the new style of buttons.
 
+###Workflow
+Sass files of components will be imported into `sass/config.sass` and run Gruntfile.js to transform and compress the `sass/config.sass` to `css/style-min.css`
 
-## Features
+###normalize.scss
+This is the reset style sheet. We will keep modifying it with requirement of our product. But most of the reset style sheet are downloaded from [Normalize](http://necolas.github.io/normalize.css/). 
 
-* HTML5 ready. Use the new elements with confidence.
-* Cross-browser compatible (Chrome, Opera, Safari, Firefox 3.6+, IE6+).
-* Designed with progressive enhancement in mind.
-* Includes [Normalize.css](http://necolas.github.com/normalize.css/) for CSS
-  normalizations and common bug fixes.
-* The latest [jQuery](http://jquery.com/) via CDN, with a local fallback.
-* The latest [Modernizr](http://modernizr.com/) build for feature detection.
-* IE-specific classes for easier cross-browser control.
-* Placeholder CSS Media Queries.
-* Useful CSS helpers.
-* Default print CSS, performance optimized.
-* Protection against any stray `console.log` causing JavaScript errors in
-  IE6/7.
-* An optimized Google Analytics snippet.
-* Apache server caching, compression, and other configuration defaults for
-  Grade-A performance.
-* Cross-domain Ajax and Flash.
-* "Delete-key friendly." Easy to strip out parts you don't need.
-* Extensive inline and accompanying documentation.
+Actually, the code in normalize.scss are css but not scss/sass. However, I want to use `@import` to import all the sass sheets of components into config.sass, which is not supported to import css file. So I change the file  extension to scss.
 
+So if you want to change the content there, you can directly write either css or scss code. And you need to `@import` it into `sass/config.sass` at the first.
 
-## Documentation
+###functions.sass
+Referring to [Elements.less](https://github.com/dmitryf/elements/blob/master/elements.less), make this sass/scss version. But I am a freshman in sass, so there must be somewhere unreasonable or enhanced.
 
-Take a look at the [documentation table of contents](doc/TOC.md). This
-documentation is bundled with the project, which makes it readily available for
-offline reading and provides a useful starting point for any documentation you
-want to write about your project.
+In functions.sass, there are plenty of attributes which are required browser prefix when using. 
 
 
-## Contributing
+###config.sass
+All the compoents sass files will be used `@import` statement to be included into `config.sass`. So `config.sass` is likely the `.h` file in C, library in Java or modulas in Node.js.
 
-Anyone and everyone is welcome to [contribute](CONTRIBUTING.md). Hundreds of
-developers have helped make the HTML5 Boilerplate what it is today.
+This is the original file to be compressed and converted in `Gruntfile.js`. 
+
+###test.sass
+This is a test file. You can totally ignore it.
