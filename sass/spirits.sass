@@ -1,0 +1,22 @@
+/* variables */
+$width: 17px
+$height: 17px
+
+
+.icon
+    display: inline-block
+    width: $width
+    height: $height
+    vertical-align: middle
+    background: url('./img/icons.png') no-repeat
+.icon-home
+    @extend .icon
+    background-position: 0 0
+.icon-arrow-down
+    @extend .icon
+    background-position: 0 -18px
+.icon-close
+    @extend .icon
+    background-position: -17px -1px
+.icon-close:hover
+    background-position: -17px -20px

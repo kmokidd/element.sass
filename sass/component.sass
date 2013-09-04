@@ -1,0 +1,59 @@
+@import "functions.sass"
+@import "global.sass"
+
+h1
+    color: #474b4c
+    font-weight: normal
+    @include fontSize(21px, 2.1rem)
+    margin: 0 0 12px 0
+h2
+    padding-bottom: 2px
+    color: #474b4c
+    border-bottom: 1px solid #e1e1e1
+    padding: 0 0 20px 0
+    @include fontSize(16px, 1.6rem)
+.block
+    margin-bottom: 12px
+.tr
+    text-align: right
+.fl
+    float: left
+
+.line
+    padding-bottom: 10px
+    border-bottom: 1px solid #e1e1e1
+
+.main-header,.main-content
+    margin-bottom: 14px
+
+.divided-info .main-header
+    margin-bottom: 20px
+
+
+.main-panel
+    border-color: #e1e1e1
+    background-color: #fff
+    padding: 20px 30px
+    border: 1px solid #e1e1e1
+    @include rounded()
+
+.panel
+    @include rounded()
+    padding: 14px 15px
+    background-color: #f4f4f5
+    margin-bottom: 30px
+.panel .dropdown
+    margin-bottom: 10px
+.alert
+    padding: 8px 35px 8px 14px
+    margin-bottom: 20px
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5)
+    background-color: #fcf8e3
+    border: 1px solid #fbeed5
+    -webkit-border-radius: 4px
+    -moz-border-radius: 4px
+    border-radius: 4px
+.alert-error
+    color: #b94a48
+    background-color: #f2dede
+    border-color: #eed3d7

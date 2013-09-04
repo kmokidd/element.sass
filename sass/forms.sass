@@ -1,0 +1,129 @@
+@import "global.sass"
+@import "functions.sass"
+
+$state-fn-color: #474b4c
+
+@mixin inputLen($w: 300px, $h: auto)
+    width: $w
+    height: $h
+
+textarea,
+input[type="text"]
+    background-color: #ffffff
+    border: 1px solid #cccccc
+    transition: border linear 0.2s, box-shadow linear 0.2s
+    display: inline-block
+    padding: 5px 6px
+    // margin-bottom: 5px
+    @include fontSize(14px, 1.4rem)
+    line-height: 20px
+    font-weight: normal
+    color: #555555
+    vertical-align: middle
+    @include rounded()
+    @include inner-shadow_simple(0 1px 1px rgba(0,0,0,0.075))
+    &:focus
+        border-color: rgba(82, 168, 236, 0.8)
+        outline: 0
+        outline: thin dotted \9
+        /* IE6-9 */
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(82,168,236,0.6)
+        -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(82,168,236,0.6)
+        box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(82,168,236,0.6)
+
+input.disabled
+    background-color: #eeeeee
+
+label
+    margin-bottom: 5px
+    @include fontSize(13px, 1.3rem)
+    font-weight: normal
+    line-height: 20px
+    cursor: pointer
+
+input[type="checkbox"],
+input[type="radio"]
+    @include box-sizing()
+    padding: 0
+    width: auto
+    margin: 4px 0 0
+    margin-top: 1px \9
+    line-height: normal
+    cursor: pointer
+    &:focus
+        outline: 5px auto -webkit-focus-ring-color
+        outline-offset: -2px
+
+
+.main-header
+    margin-bottom: 30px
+    .state
+        color: $state-fn-color
+
+.form
+    input
+    .normal
+        padding: 5px 0 3px 0
+        display: block
+        @extend .father-clear
+        textarea
+            @include inputLen(400px, 100px)
+    .lab
+        float: left
+        display: inline-block
+        width: 70px
+        color: $state-fn-color
+        @include fontSize(13px, 1.3rem)
+        height: 32px
+        line-height: 32px
+        margin-right: 30px
+        .sign
+            display: inline
+            vertical-align: text-bottom
+            color: #ff6600
+            margin: 10px 0 0 5px
+    .wExplain
+        padding-top: 0
+        .form-content
+            padding: 5px 0 8px 0
+            @extend .father-clear
+            display: block
+        .lab
+            height: 20px
+            margin-bottom: 0
+        .inp
+            margin-bottom: 0
+        .explain-content
+            color: #aaaaaa
+            @include fontSize(12px, 1.2rem)
+    .inp
+        float: left
+    .len1
+        @include inputLen()
+    .len2
+        @include inputLen(400px)
+    .err
+        .inp
+            border: 1px solid #b94a48
+            @include box-shadow(none)
+        .explain-content
+            float: left
+            margin-left: 10px
+            color: #b94a48
+            height: 30px
+            line-height: 30px
+    .cb
+        display: inline
+    .rd
+        display: block
+    .turple
+        margin-right: 20px
+        input
+            margin-right: 10px
+    .inp-group
+        display: inline-block
+    .component
+        margin-right: 10px
+        @include inputLen(120px)
+    .last
+        margin-bottom: 20px

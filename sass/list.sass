@@ -1,0 +1,156 @@
+@import "functions.sass"
+@import "global.sass"
+
+$a-h-color: #fff
+$hover-bg-color: #696f75
+$active-bg-color: #848a90
+
+$us-hover-color: #9ba0a5
+$us-hover-bg-color: #3a3d42
+
+$link-color: #0974bd
+$active-link-color: #9fa4a7
+
+header
+	li
+		display: inline-block
+
+.header-one
+	position: relative
+	.header-one-inner
+		position: relative
+	li
+		float: left
+		position: relative
+	a
+		overflow: hidden
+		display: block
+		color: #b4b9bf
+		display: block
+		padding: 10px 15px
+	.active
+		background: $hover-bg-color
+		@include rounded(3px)
+		&>.words
+			color: $a-h-color
+
+.main-nav
+	width: 70%
+	.icon-home
+		float: left
+		margin: 10px 5px 0 0
+	ul
+		float: left
+		width: 90%
+	li
+		margin-right: 5px
+		&:hover
+			background: $hover-bg-color
+			@include rounded(3px)
+
+/* secondary menu */
+.main-nav .second
+	visibility: hidden
+	position: absolute
+	left: 0
+	top: 32px
+	li
+		z-index: 100
+/* show secondary menu */
+.main-nav ul li:hover ul.second
+	visibility: visible
+
+.main-nav .second li
+	clear: both /* 垂直显示 */
+	text-align: center
+	background: $hover-bg-color
+.main-nav .second a
+	width: 140px
+	height: 30px
+	line-height: 30px
+	text-align: left
+	padding: 0 15px
+.main-nav .second .first a
+	border-top: none
+	@include box-shadow(none)
+.main-nav .second .last
+	@include border-radius(0, 3px, 3px, 0)
+.main-nav .second .last a
+	margin-bottom: 10px
+.main-nav .second a:hover
+	background: $active-bg-color
+	color: $a-h-color
+
+
+.user
+	position: absolute
+	top: 50%
+	right: 0
+	margin-top: -25px
+	height: 50px
+	line-height: 50px
+	cursor: pointer
+	li
+		float: left
+		position relative
+	a
+		display: block
+		height: 30px
+		line-height: 30px
+		overflow: hidden
+	&:hover
+		background: $us-hover-bg-color
+
+.user .second
+	visibility: hidden
+	position: absolute
+	left: 0
+	top: 50px
+.user ul li:hover .second
+	visibility: visible
+.user .second li
+	clear: both
+	text-align: left
+	background: $us-hover-bg-color
+.user .second a
+	display: inline-block
+	width: 76px
+	height: 30px
+	background: $us-hover-bg-color
+	padding: 0 15px
+	@include seperateLine(1px solid #4d5054, 0px -1px 0 #2a2d31)
+.user .second .last
+	@include border-radius(0, 3px, 3px, 0)
+.user .second .last a
+	margin-bottom: 10px
+.user .second a:hover
+	background: #5F6368
+	color: $us-hover-color
+	@include seperateLine(1px solid #3a3d42, 0px -1px 0 #3a3d42)
+
+.user-setting
+	.word
+		float: left
+	.icon-arrow-down
+		margin-top: 17px
+		float: left
+
+
+
+
+/* second list */
+.submain-nav
+	padding: 15px 0
+	a
+		color: $link-color
+	.active
+		color: $active-link-color
+	.divider
+		margin: 0 12px 0 10px
+		color: #e6e6e6
+
+.hideLine
+	@include seperateLine(1px solid #696f75, 0px -1px 0 #696f75)
+
+.showLine
+	@include seperateLine(1px solid #7b8086, 0px -1px 0 #5b5e61)

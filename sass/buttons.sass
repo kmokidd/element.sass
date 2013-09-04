@@ -1,6 +1,74 @@
+@import "functions.sass"
+
 $width: 20px
 $height: 100px
+$paddingT: 7px
+$paddingL: 15px
 
 .btn
-	width: $width
-	height: $height
+    @include fontSize(14px, 1.4rem)
+    line-height: 18px
+    color: #474b4c
+    border: none
+    @include rounded(3px)
+    background-color: #eceef0
+    padding: $paddingT $paddingL
+    cursor: pointer
+    display: inline-block
+    vertical-align: middle
+    outline: none
+    *display: inline-block
+    *zoom: 1
+    @include transition-property((background, color))
+    @include transition-duration(0.3s)
+    &:hover
+        background-color: #f5f6f7
+        text-decoration: none
+    &:active
+        border: 0
+        background-color: #eceef0
+        @include box-shadow((0px 1px 2px rgba(0, 0, 0, 0.2), 0px 1px 0px white))
+
+.btn-primary
+    color: #fff
+    background-color: #2496e6
+    &:hover
+        background-color: #3ba8f5
+    &:active
+        background-color: #2496e6
+
+.btn-action
+    background-color: #1bbb9a
+    color: #fff
+    &:hover
+        background-color: #40d0b2
+        color: #fff
+    &:active
+        background-color: #1bbb9a
+
+.btn-disabled,
+.btn-disabled:hover,
+.btn-disabled:active
+    border: none
+    background-color: #f6f6f6
+    color: #aaa
+    cursor: not-allowed
+    text-shadow: none
+    @include box-shadow(none)
+    padding: $paddingT $paddingL +5px
+
+.btn-small
+    @include fontSize(13px, 1.3rem)
+    padding: $paddingT -4px $paddingL -7px
+
+.btn-large
+    padding: $paddingT +3px $paddingL
+
+button
+    margin: auto 0
+    *padding: 5px 5px 3px 5px
+    &::-moz-focus-inner
+        padding: 0
+        border: 0
+    &:active
+        text-decoration: none

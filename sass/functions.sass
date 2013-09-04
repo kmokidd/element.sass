@@ -1,11 +1,30 @@
+@import "global.sass"
+
+/* seperate lines */
+@mixin seperateLine($bt, $bs)
+	border-top: $bt
+	@include box-shadow($bs)
+
+/* default html settings */
+@mixin default-html($bg-color: #fff, $w: 100%)
+	width: $w
+	background: $bg-color
+	margin: 0 auto
+
+/* font-size */
+@mixin fontSize($ms-fs: 13px, $webkit-fs: 1.3rem)
+	font-size: $ms-fs
+	font-size: $webkit-fs
+
 /* gradient */
-@mixin gradient($color: #F5F5F5, $start: #EEE, $stop: #FFF)
-	background: $color
-	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, $start), color-stop(1, $stop))
-	background: -ms-linear-gradient(bottom, $start, $stop)
-	background: -moz-linear-gradient(center bottom, $start 0%, $stop 100%)
-	background: -o-linear-gradient($stop, $start)
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$stop}, endColorstr=#{$start}, GradientType=0)
+@mixin gradient($color: #F5F5F5, $start: #EEE, $stop: #FFF, $repeat: repeat-x)
+	background: $color $repeat
+	background: -webkit-gradient(linear, 0 0, 0 100%, from($start), to($stop)) $repeat
+	background: -ms-linear-gradient(top, $start, $stop) $repeat
+	background: -moz-linear-gradient(top, $start, $stop) $repeat
+	background: -o-linear-gradient(top, $stop, $start) $repeat
+	background: linear-gradient(to bottom,$start,$stop) $repeat
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$start}, endColorstr=#{$stop}, GradientType=0)
 
 /* gradient with opacity */
 @mixin bw-gradient($color: #F5F5F5, $start: 0, $stop: 255)
@@ -71,6 +90,11 @@
 	@include transform(scale($ratio))
 @mixin translate($x:0, $y:0)
 	@include transform(translate($x, $y))
+@mixin transition-property($args)
+	-webkit-transition-property: $args
+	-moz-transition-property: $args
+	-o-transition-property: $args
+	transition-property: $args
 @mixin transition-duration($duration: 0.2s)
 	-moz-transition-duration: $duration
 	-webkit-transition-duration: $duration
@@ -83,6 +107,10 @@
 	transition: all $duration $ease
 
 /* box-shadow */
+@mixin inner-shadow_simple($arg)
+	-webkit-box-shadow: inset $arg
+	-moz-box-shadow: inset $arg
+	box-shadow: inset $arg
 @mixin inner-shadow($horizontal:0, $vertical:1px, $blur:2px, $alpha: 0.4)
 	-webkit-box-shadow: inset $horizontal $vertical $blur rgba(0, 0, 0, $alpha)
 	-moz-box-shadow: inset $horizontal $vertical $blur rgba(0, 0, 0, $alpha)
@@ -90,6 +118,7 @@
 @mixin box-shadow($arguments)
 	-webkit-box-shadow: $arguments
 	-moz-box-shadow: $arguments
+	-o-box-shadow: $arguments
 	box-shadow: $arguments
 
 /* box-sizing */
