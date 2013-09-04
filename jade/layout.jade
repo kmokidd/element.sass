@@ -1,0 +1,70 @@
+!!! 5
+html(lang="zh_CN")
+    head
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible",content="IE=edge")
+        meta(name="viewport",content="width=device-width, initial-scale=1")
+        link(rel="stylesheet",href="css/style-min.css")
+        link(rel="stylesheet",href="css/admin.css")
+        script(src="js/vendor/modernizr-2.6.2.min.js")
+        script(src="js/vendor/jquery-1.10.2.min.js")
+        script(src="js/vendor/bootstrap-dropdown.js")
+        script(src="js/main.js")
+        title 后台管理系统
+    body
+        div.wrapper
+            //- 头部
+            header.header
+                div.header-one
+                    div.header-one-inner
+                        nav.main-nav.clearfix
+                            i.icon-home.clearfix
+                            ul.st-nav
+                                li.activityM
+                                    a.words(href="") 活动管理
+                                li.userM.active
+                                    a.words(href="") 用户管理
+                                    ul.second
+                                        li.first
+                                            a.words(href="") 用户信息
+                                        li
+                                            a.words.showLine(href="") 特殊用户
+                                        li
+                                            a.words.showLine(href="") 行业分类
+                                        li.last
+                                            a.words.showLine(href="") 国家地区
+                                li.admin
+                                    a.words(href="") 管理员操作
+                                li.contentM
+                                    a.words(href="") 内容管理
+                        div.user.clearfix
+                            ul.user-setting
+                                li
+                                    a.word.clearfix listen1999
+                                    i.icon-arrow-down.clearfix
+                                    ul.second
+                                        li.last
+                                            a.word(href="") 退出登录
+                div.header-two
+                    div.header-two-inner
+                        nav.submain-nav
+                            ul.breadcrumb
+                                - var breadcrumb = ['Home', 'Publish', 'New Entry', 'Users'];
+                                    li.Home
+                                        a(href='')= breadcrumb[0]
+                                        i.divider &gt;
+                                    li.Publish
+                                        a(href='')= breadcrumb[1]
+                                        i.divider &gt;
+                                    li.NE
+                                        a(href='')= breadcrumb[2]
+                                        i.divider &gt;
+                                    li.Users
+                                        a.active(href='')= breadcrumb[3]
+            //- 内容
+            block content
+            //- 尾部
+            footer.all-footer
+                aside.foot-one
+                    p Control Panel V1.5.1
+                    p &copy; Copyright 2003 - 2013 EllisLab, Inc.  Build Date: 20130827

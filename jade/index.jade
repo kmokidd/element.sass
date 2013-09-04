@@ -1,0 +1,118 @@
+extends layout
+
+block content
+    section.content
+        article.divCenter.all-users
+            .main-panel.all-users-inner
+                .main-header
+                    h1.dib 全部用户
+                    .option
+                        a.btn.btn-primary 添加新用户
+                .panel.form
+                    select
+                        - var options = ['性别', 'action2', 'action3', 'action4']
+                        - for item in options
+                            option(value="#{item}")= item
+                    select
+                        - var options = ['教育背景', 'action21', 'action31', 'action41']
+                        - for item in options
+                            option(value="#{item}")= item
+                    select
+                        - var options = ['公司性质', 'action2', 'action3', 'action4']
+                        - for item in options
+                            option(value="#{item}")= item
+                    select
+                        - var options = ['行业', 'action21', 'action31', 'action41']
+                        - for item in options
+                            option(value="#{item}")= item
+                    select
+                        - var options = ['职责', 'action2', 'action3', 'action4']
+                        - for item in options
+                            option(value="#{item}")= item
+                    select
+                        - var options = ['国家', 'action21', 'action31', 'action41']
+                        - for item in options
+                            option(value="#{item}")= item
+                    select
+                        - var options = ['省份', 'action2', 'action3', 'action4']
+                        - for item in options
+                            option(value="#{item}")= item
+                    select
+                        - var options = ['市区', 'action21', 'action31', 'action41']
+                        - for item in options
+                            option(value="#{item}")= item
+                    input(placeholder="关键字",type="text").len2
+                    button.btn.btn-primary.ml10 搜索
+                .block.line 
+                    | 共找到 
+                    strong 4942
+                    |  条
+                .block.tr
+                    .fl
+                        select 
+                            option 批量操作
+                        button.btn.ml10 应用
+                    div.pagination.dib
+                        ul
+                            -for (var i= 1;i<6;i++)
+                                li
+                                    a #{i}
+                            li.active
+                                a 222
+                            li.disabled
+                                a 44
+                            li
+                                span 末页
+                .block
+                    table.table
+                        tr
+                            th
+                                input(type='checkbox')
+                                | GUID
+                            th 电子邮箱
+                            th 姓名
+                            th 创建时间
+                            th 最后登陆时间
+                            th 操作
+                        -for(var i =1;i<10;i++)
+                            tr
+                                td
+                                    input(type='checkbox')
+                                    | 102#{i}
+                                td liyujie#{i}@gmail.com
+                                td 豆瓣乐队
+                                td 2013-08-30 12:20
+                                td 2013-08-30 22:20
+                                td 
+                                    a(href='#').close
+                                        i.icon-close
+                        tr
+                            th
+                                input(type='checkbox')
+                                | GUID
+                            th 电子邮箱
+                            th 姓名
+                            th 创建时间
+                            th 最后登陆时间
+                            th 操作
+                .block.tr
+                    .fl
+                        select 
+                            option 批量操作
+                        button.btn.ml10 应用
+                    div.pagination.dib
+                        ul
+                            -for (var i= 1;i<6;i++)
+                                li
+                                    a #{i}
+                            li.active
+                                a 222
+                            li.disabled
+                                a 44
+                            li
+                                span 末页
+                .block.alert.alert-error 未找到任何结果
+
+
+
+

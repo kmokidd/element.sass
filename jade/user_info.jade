@@ -1,0 +1,77 @@
+extends layout
+
+block content
+    section.content
+        article.divCenter.all-users
+            .main-panel.all-users-inner
+                .main-header
+                    h1.dib.block-title 设置个人资料
+                    .panel
+                        p.state 公开信息: 以下信息对全社区公开，社区其他用户根据这些信息更好了解您。
+                .main-content
+                    .form
+                        ul.no-group
+                            li.normal
+                                label.lab(for="") 演示
+                                    sup.sign *
+                                input.inp.len1.disabled(type="text", disabled="disabled")
+                            li.normal
+                                label.lab(for="") 演示文字
+                                    sup.sign *
+                                input.inp.len2(type="text")
+                            li.normal.wExplain
+                                div.form-content
+                                    label.lab(for="") 演示
+                                        sup.sign *
+                                    input.inp.len2(type="text")
+                                div.explain-part
+                                    label.lab
+                                    p.explain-content 说明文字演示，这是一段说明文字。
+                            li.normal
+                                label.lab(for="") 演示文字
+                                input.inp.len1(type="text")
+                            li.normal.err
+                                label.lab(for="") 演示文字
+                                    sup.sign *
+                                input.inp.len1(type="text")
+                                p.explain-content Please correct the error
+                            li.normal
+                                label.lab(for="") 演示
+                                textarea.inp
+                            li.normal.withGroup
+                                label.lab(for="")
+                                div.inp
+                                    label.turple.cb
+                                        input(type="checkbox", name="") 
+                                        |选项一
+                                    label.turple.cb
+                                        input(type="checkbox", name="")
+                                        |选项二
+                                    label.turple.cb
+                                        input(type="checkbox", name="")
+                                        |选项三
+                            li.normal
+                                label.lab(for="") 演示
+                                div.inp-group
+                                    input.component(type="text")
+                                    input.component(type="text")
+                                    input.component(type="text")
+                            li.normal
+                                label.lab(for="") 演示文字
+                                div.inp
+                                    label.turple.rd
+                                        input(type="radio", name="")
+                                        |选项演示文字一
+                                    label.turple.rd
+                                        input(type="radio", name="")
+                                        |选项演示文字2
+                                    label.turple.rd
+                                        input(type="radio", name="")
+                                        |选项演示文字3
+                            li.normal.last
+                                label.lab(for="") 演示
+                                textarea.inp
+                            li.normal.hasBtn
+                                label.lab(for="")
+                                button.btn.btn-primary 提交
+
