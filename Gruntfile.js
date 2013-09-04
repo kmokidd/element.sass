@@ -32,7 +32,9 @@ module.exports = function(grunt) {
           }
         },
         files: {
-          "index.html": "index.jade"
+          "index.html": "jade/index.jade",
+          "user_info.html": "jade/user_info.jade",
+          "user_info2.html": "jade/user_info_2.jade"
         }
       }
     },
@@ -49,16 +51,12 @@ module.exports = function(grunt) {
       }
     },
     watch:{
-        scripts:{
-            files:['./{,*/,*/*/}*.js'],
-            tasks:['concat:js']
-        },
         css:{
             files:['./{,*/,*/*/}*.{scss,sass}'],
             tasks:['sass']
         },
         html:{
-          files:['*.jade'],
+          files:['jade/*.jade'],
           tasks:['jade']
         },
         livereload: {
@@ -92,24 +90,24 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-watch');
-//  grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-livereload');
-//  grunt.loadNpmTasks('grunt-contrib-requirejs');
+  grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-contrib-clean');
-//  grunt.loadNpmTasks('grunt-open');
+  grunt.loadNpmTasks('grunt-open');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-regarde');
-//  grunt.loadNpmTasks('grunt-contrib-jade');
+  grunt.loadNpmTasks('grunt-contrib-jade');
   grunt.loadNpmTasks('grunt-contrib-compass');
 
   grunt.renameTask('regarde', 'watch');
 
   grunt.registerTask('default', [
-//    'jade',
+    'jade',
     'sass',
     'livereload-start',
-//    'connect',
-//    'open',
+    'connect',
+    'open',
     'watch',
   ]);
 
