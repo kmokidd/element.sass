@@ -56,4 +56,4 @@ All the compoents sass files will be used `@import` statement to be included int
 This is the original file to be compressed and converted in `Gruntfile.js`. 
 
 ###test.sass
-This is a test file. You can totally ignore it.
+This is a test file. You can totally ignore it. Or delete it.
